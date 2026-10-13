@@ -1,0 +1,64 @@
+{
+  "name": "@forumulate/eleventy",
+  "version": "0.1.0",
+  "description": "Eleventy plugin for Forumulate: comments, search, changelog and feed shortcodes, plus build-time content data from the public API.",
+  "license": "MIT",
+  "author": "Forumulate",
+  "homepage": "https://forumulate.com/guides",
+  "bugs": {
+    "url": "https://forumulate.com/community"
+  },
+  "keywords": [
+    "forumulate",
+    "eleventy",
+    "11ty",
+    "eleventy-plugin",
+    "comments",
+    "changelog",
+    "docs",
+    "forum",
+    "blog"
+  ],
+  "type": "module",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "default": "./dist/index.js"
+    },
+    "./package.json": "./package.json"
+  },
+  "sideEffects": false,
+  "files": [
+    "dist",
+    "README.md",
+    "LICENSE"
+  ],
+  "publishConfig": {
+    "access": "public"
+  },
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "typecheck": "tsc -p tsconfig.json --noEmit",
+    "prepublishOnly": "npm run build"
+  },
+  "dependencies": {
+    "@forumulate/embed": "^1.0.0"
+  },
+  "peerDependencies": {
+    "@11ty/eleventy": ">=2"
+  },
+  "peerDependenciesMeta": {
+    "@11ty/eleventy": {
+      "optional": true
+    }
+  },
+  "devDependencies": {
+    "typescript": "^5.6.3"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/forumulate/eleventy.git"
+  }
+}
